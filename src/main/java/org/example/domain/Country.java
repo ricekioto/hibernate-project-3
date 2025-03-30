@@ -38,18 +38,18 @@ public class Country {
     BigDecimal surfaceArea;
 
     @Column(name = "indep_year")
-    Byte indepYear;
+    Short indepYear;
 
     @Column(nullable = false)
-    String population;
+    Integer population;
 
     @Column(name = "life_expectancy")
     BigDecimal lifeExpectancy;
 
     BigDecimal gnp;
 
-    @Column(name = "gnp_id")
-    BigDecimal gnpId;
+    @Column(name = "gnpo_id")
+    BigDecimal gnpoId;
 
     @Column(name = "local_name", length = 45, nullable = false)
     String localName;
