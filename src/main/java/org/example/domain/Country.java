@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -61,15 +62,15 @@ public class Country {
     String headOfState;
 
     @ToString.Exclude
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "capital")
     City city;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY)
     List<City> cities;
 
-    @OneToMany(mappedBy = "country")
-    List<CountryLanguage> countryLanguages;
+    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY)
+    Set<CountryLanguage> languages;
 
 }
